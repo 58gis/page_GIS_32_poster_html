@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--R5/11/03 14:00-->
+<!--01_32GIS_poster.html-->
+<head>
+    <meta charset="utf-8">
+    <title>32回GIS学会ポスターhtml版</title>
+    <style>/*全体*/
+        html {
+            background-color: #fff;
+            color: #333;
+            -ms-text-size-adjust: 100%;
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            font-family: "Source Han Sans",sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+            font-size: 15px;
+            letter-spacing: 0em;
+            line-height: 2;
+            text-align: center;
+        }        
+            @media(min-width: 36em){.wrapper{
+                font-size:17px;line-height:2}}
+            @media(min-width: 80em){.wrapper{
+                font-size:19px;line-height:2;line-height:2}}
+            @media(min-width: 120em){.wrapper{
+                font-size:21px;line-height:2;line-height:2}}
+            @media screen and (max-width: 23em){.wrapper{
+                font-size:14px}}
+    </style>
+    <style>/*heading*/
+        .heading {
+            font-family: 'Arial', sans-serif;
+            margin: 20px 10px 1px;
+        }
+        #event,#author-details {
+            text-align: right;
+        }
+        h1{
+            font-size: 60px;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.3em;
+        }
+        #author {
+            text-align: left;
+            display: inline-block;
+        }
+        #email-container {
+            display: flex;
+            gap: 5px;
+            justify-content: flex-end;
+        }
+    </style>
+    <style>/*content*/
+        content p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        .t-paragraph {
+            width: 100%;
+            padding: 0 1em;
+            text-align: justify;
+            margin: 1em auto 0;
+            max-width: calc(30em + 2em * 2);
+        }
+        .wrapper *, .wrapper *::before, .wrapper *::after {
+            box-sizing: border-box;
+        }
+    </style>
+    <script>/*MathJax*/
+    window.MathJax = {
+        tex: {
+        inlineMath: [['\\(', '\\)']]
+        },
+        svg: {
+        fontCache: 'global'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <article class="wrapper">
+        <section class="heading">
+            <p id="event">第32回地理情報システム学会<br>学術研究発表大会<br>令和5年10月28･29日<br>於:電気通信大学</p>
+            <h1>口コミ情報に基づく街の評価と地価</h1>
+            <div id="author-details">
+                <p id="author">小谷木英資*・河端瑞貴**<br> *慶應義塾大学法学部政治学科3年 **慶應義塾大学経済学部</p>
+            </div>
+            <div id="email-container">
+                <p>E-Mail: koyagi</p><p>あっとkeio.jp</p>
+            </div>
+            <a href="https://58gis.github.io/page_GIS_32_poster_image" class="link-text">画像版はこちら</a>
+        </section>
+        <section class="content">
+            <p>背景・目的</p>
+            <p class="t-paragraph">インターネットの発達によって、口コミサイトでの情報交換が盛んに行われるようになってきた。口コミ情報は、不動産売買や賃貸などの参考にされることが増えているが、口コミ情報と不動産価格との関連を分析した研究はほとんど見られない。そこで本研究では、口コミ情報と住宅地の地価との関係を分析した。</p>
+            <p>分析手法</p>
+            <p class="t-paragraph">対象地域：東京23区<br>　分析に使用した不動産関連サイトの口コミ情報は、駅(合計6,076件)または自治体(合計734件)に関連付けられている。各サイトでは、「満足なところ」・「満足」、 「不満なところ」・「不満」の2つに分けて口コミが集計されていた。まず、口コミデータに対し、KHコーダーを用いて形態素解析(文中の語彙を切り分け)を行い、「満足なところ」と「不満なところ」について、出現頻度が各上位25位、合計50個の語彙を特定し、クラスター分析を行った(図1)。</p>
+            <img src="https://58gis.github.io/page_GIS_32_poster_html/zu01_mer_25_8.png" alt="「満足なところ」の出現頻度上位25位の語句のクラスター分析">
+            <p>図1　「満足なところ」の出現頻度<br>上位25位の語句のクラスター分析</p>
+            <p class="t-paragraph">　次に、クラスター分析の結果を基に、各口コミが触れている具体的な口コミの話題を識別し （表1）、 二値変数として表現した。公示地価の各標準地から500m、1,000m、1,500m以内の駅、最寄りの駅、駅を基準としたドロネー三角形分割で標準地が属する三角形の頂点になっている3駅の口コミデータをもとに、各話題の言及頻度を計算した。</p>
+            <img src="https://58gis.github.io/page_GIS_32_poster_html/hyo01_reibunhyo.jpg" alt="「満足」・「不満」上位25位の頻出の語彙と口コミの例文">
+            <p>表1　「満足」・「不満」上位25位の頻出の語彙と口コミの例文</p>
+
+            <p class="t-paragraph">　地価pを以下の式に基づき回帰分析を行った。</p>
+            <p>
+                \( \ln p_i = M_i^\prime \gamma + D_i^\prime \delta + C_i^\prime \beta + \epsilon_i \)
+                </p>
+            <p class="t-paragraph">\( p_i \)は公示地価（住宅地）を表す。<em>M</em> は「満足なところ」・「満足」、<em>D</em> は「不満なところ」・「不満」、<em>C</em> はコントロール変数を表す。</p>
+                  
+            <p>データ</p>
+            <p class="t-paragraph">国土数値情報「地価公示データ(令和5年度)」「鉄道データ(令和5年度)」
+                <br>アットホーム「タウンライブラリー」<br>https://www.athome.co.jp/town-library/tokyo/ (2023年4月8日)
+                <br>スマイティ「クチコミ・街レビュー」<br>https://sumaity.com/town/tokyo/ (2023年9月6日)</p>
+
+            <p>結果・考察</p>
+            <p class="t-paragraph">・ 「満足」として言及されている口コミ情報と地価に負の関係が見られるものがある。一方、「不満」として言及されている口コミ情報と地価に正の関係が見られるものがある。これはデータの特徴や作成方法に起因していると考えられる。</p>
+            <img src="https://58gis.github.io/page_GIS_32_poster_html/hyo02_09kaikikekkamodel2hyo.jpg" alt="推定結果表">
+            <p>表2　推定結果</p>
+            <p class="t-paragraph">・『良い・交通・便』と『都心・アクセス』のように同じ交通アクセスの良好さを示す話題であっても、それぞれの口コミが出現する地域に違いが見られた。(図2,図3)</p>
+            <img src="https://58gis.github.io/page_GIS_32_poster_html/zu02_bend_ekionly0.025.png" alt="『良い・交通・便』の出現頻度(半径1500m)">
+            <p>図2　『良い・交通・便』<br>の出現頻度(半径1500m)</p>
+            <img src="https://58gis.github.io/page_GIS_32_poster_html/zu03_acced_ekionly0.025.png" alt="『都心・アクセス』の出現頻度(半径1500m)">
+            <p>図3　『都心・アクセス』<br>の出現頻度(半径1500m)</p>
+            <p class="t-paragraph">・『住宅・静か』の話題においては、いわゆる下町と山手のエリアの特性と関連があることが読み取れる(図4)。</p>
+            <img src="https://58gis.github.io/page_GIS_32_poster_html/zu04_dsizud_eki.png" alt="『住宅・静か』の出現頻度(ドロネー三角形分割)">
+            <p>図4　『住宅・静か』の出現頻度<br>(ドロネー三角形分割)</p>
+            <p>今後の展望</p>
+
+            <p class="t-paragraph">　本分析では、語句の上位n位の設定やクラスター数の選定、クラスター内の語句をバイナリ変数に変換する際のコーディングルールなどに恣意的な操作の余地が存在する。そこで、今後は機械学習を活用し、これらのパラメータの最適化を試みたい。<br>　口コミデータがミクロな選好を映していると考えられることから、それを通じて地域の住宅地としての強みや課題点、さらにどのような社会的階層からの需要が集まるのかを明らかにすることにより、地域振興や地域おこしの取り組みにおいて、口コミデータの有効な活用法を提案することを目指したい。</p>
+            
+            <p>謝辞：本研究はJSPS科研費JP23K17559および慶應義塾学事振興資金（共同研究）の助成を受けた．ここに謝意を表する．</p>
+        </section>
+    </article>
+</body>
+</html>
