@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <!--R5/11/03 14:00-->
-<!--01_32GIS_poster.html-->
+<!--02_32GIS_poster.html-->
 <head>
     <meta charset="utf-8">
     <title>32回GIS学会ポスターhtml版</title>
@@ -68,8 +68,54 @@
             margin: 1em auto 0;
             max-width: calc(30em + 2em * 2);
         }
+
+        img{
+            max-width: 90%;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        /* スマホ用のスタイル */
+            @media (max-width: 800px) {
+                img {
+                    max-width: calc(100% - 20px);  /*スマホでの画像の最大幅*/
+                }
+            }
+
         .wrapper *, .wrapper *::before, .wrapper *::after {
             box-sizing: border-box;
+        }
+    </style>
+    <style>/*左右画像*/
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .image-container img {
+            max-width: 90%;
+            display: block;
+        }
+        
+        .left-image {
+            margin-right: 5%; /* 画像間の余白を設定 */
+        }
+        
+        .right-image {
+            margin-left: 5%; /* 画像間の余白を設定 */
+        }
+
+        @media (max-width: 800px) {
+            .image-container {
+                flex-direction: column;
+            }
+            .image-container img {
+                max-width: calc(100% - 20px);
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     </style>
     <script>/*MathJax*/
@@ -124,10 +170,16 @@
             <img src="https://58gis.github.io/page_GIS_32_poster_html/hyo02_09kaikikekkamodel2hyo.jpg" alt="推定結果表">
             <p>表2　推定結果</p>
             <p class="t-paragraph">・『良い・交通・便』と『都心・アクセス』のように同じ交通アクセスの良好さを示す話題であっても、それぞれの口コミが出現する地域に違いが見られた。(図2,図3)</p>
-            <img src="https://58gis.github.io/page_GIS_32_poster_html/zu02_bend_ekionly0.025.png" alt="『良い・交通・便』の出現頻度(半径1500m)">
-            <p>図2　『良い・交通・便』<br>の出現頻度(半径1500m)</p>
-            <img src="https://58gis.github.io/page_GIS_32_poster_html/zu03_acced_ekionly0.025.png" alt="『都心・アクセス』の出現頻度(半径1500m)">
-            <p>図3　『都心・アクセス』<br>の出現頻度(半径1500m)</p>
+            <div class="image-container">
+                <div class="left-image">
+                    <img src="https://58gis.github.io/page_GIS_32_poster_html/zu02_15bend_eki.png" alt="『良い・交通・便』の出現頻度(半径1500m)">
+                    <p>図2　『良い・交通・便』<br>の出現頻度(半径1500m)</p>
+                </div>
+                <div class="right-image">
+                    <img src="https://58gis.github.io/page_GIS_32_poster_html/zu03_15acced_ek.png" alt="『都心・アクセス』の出現頻度(半径1500m)">
+                    <p>図3　『都心・アクセス』<br>の出現頻度(半径1500m)</p>
+                </div>
+            </div>
             <p class="t-paragraph">・『住宅・静か』の話題においては、いわゆる下町と山手のエリアの特性と関連があることが読み取れる(図4)。</p>
             <img src="https://58gis.github.io/page_GIS_32_poster_html/zu04_dsizud_eki.png" alt="『住宅・静か』の出現頻度(ドロネー三角形分割)">
             <p>図4　『住宅・静か』の出現頻度<br>(ドロネー三角形分割)</p>
